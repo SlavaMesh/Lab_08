@@ -1,0 +1,12 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+{% block title %}
+    Post
+{% endblock title %}
+
+{% block content %}
+    <h2>{{post.date|date:'d M Y' }}</h2>
+    <h5>{{post.text}}</h5>
+    <br> <a href="{% url 'post_update' post.id %}"> Редактировать </a>
+    <br> <a href="{% url 'post_delete' post.id %}"> Удалить </a>
+{% endblock content %}
